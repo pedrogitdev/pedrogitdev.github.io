@@ -5,21 +5,24 @@
     <title>Lista de Pagamentos</title>
     <style>
       body {
-        background-color: #160f26;
+        background-color: #212022;
         font-family: Helvetica, sans-serif;
-        font-size: 16px;
+        font-size: 18px;
         margin: 0;
         padding: 0;
       }
       #container {
-        margin: 5% auto;
-        max-width: 1000px;
+        margin: 10% auto;
+        max-width: 1500px;
         text-align: center;
+      }
+      .item1{
+        color:white;
       }
       p {
         text-align: center;
         color: white;
-        font-size:25px
+        font-size:35px
       }
       footer {
         color: white;
@@ -28,7 +31,7 @@
       }
       h1 {
         color: white;
-        font-size: 28px;
+        font-size: 48px;
         margin-bottom: 30px;
       }
       h2{
@@ -52,26 +55,29 @@
         padding: 10px;
       }
       button:hover {
-        background-color: #406c2d;
+        background-color: #1b1c1a;
       }
       .pago {
         background-color: #28a745;
         color: #fff;
       }
       .nao-pago {
-        background-color: #645e5e;
+        background-color: #131313;
         color: #fff;
       }
       .item {
-        border: 2px solid #e3e3e3;
+        border: 2px solid #404a50;
         border-radius: 5px;
         margin-bottom: 10px;
         padding: 10px;
         text-align: left;
         display: inline-block;
-        width: 200px;
+        width: 400px;
         vertical-align: top;
         margin-right: 5px;
+      }
+      .pago{
+        background-color: #28a745;
       }
       .pago .nome {
         text-decoration: line-through;
@@ -83,92 +89,265 @@
       }
     </style>
   </head>
+  
   <body>
     <div id="container">
-      <h1><strong>Oi, Pai!</strong></h1>
-      <h2>Esta é a lista de inquilinos, para marcar como pago clique no botão preto.</h2>
+      <h1><strong>Olá, Pai!</strong></h1>
+      <h2>Esta é a lista de inquilinos, clique em adicionar para a soma do aluguel referido ser feita, <br> para marcar como pago clique no botão "Não Pago".</h2>
+      <p id = "resultado"></p>
       <div class="item nao-pago" id="item1">
+        <img src="https://s.yimg.com/ny/api/res/1.2/s9LhYcwKVMniYvR88PoXAQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD03OTg-/https://s.yimg.com/os/creatr-uploaded-images/2022-06/60d35390-fc9d-11ec-bfc6-2979e43e55cb" align="right" width="175" height="150">
+        <h1><span class="nome">Subway</span></h1>
+        <h5><span class="email">Email: emailteste@gmail.com</span></h5>
+        <h5><span class="numero">Whatsapp: 2041-5120</span></h5>
+        <h5><span class="vence1">Aluguel vence: <strong><span class="vence2">23/02</span></strong></span></h5>
+        <h3>Valor: <span class="valor" data-valor="1500.00">R$1500.00</span></h3>
+        <button onclick="marcarPago(this)" data-pago="nao">Não Pago</button>
+        <button class="adicionar">Adicionar</button>
+      </div>
+      <div class="item nao-pago" id="item2">
+        <img src="https://www.beiramarshopping.com.br/fmanager/beiramar2017/noticias/t/imagem2378_3.jpg" align="right" width="175" height="150">
+        <h1><span class="nome">Boticário</span></h1>
+        <h5><span class="email">Email: emailteste@gmail.com</span></h5>
+        <h5><span class="numero">Whatsapp: 2041-5120</span></h5>
+        <h5><span class="vence1">Aluguel vence: <strong><span class="vence2">23/02</span></strong></span></h5>
+        <h3>Valor: <span class="valor" data-valor="1500.00">R$1500.00</span></h3>
+        <button onclick="marcarPago(this)" data-pago="nao">Não Pago</button>
+        <button class="adicionar">Adicionar</button>
+      </div>
+      <div class="item nao-pago" id="item3">
+        <img src="https://melhorescolha.com/blog/wp-content/uploads/2018/09/lojas-TIM.jpg" align="right" width="175" height="150">
+        <h1><span class="nome">TIM</span></h1>
+        <h5><span class="email">Email: emailteste@gmail.com</span></h5>
+        <h5><span class="numero">Whatsapp: 2041-5120</span></h5>
+        <h5><span class="vence1">Aluguel vence: <strong><span class="vence2">23/02</span></strong></span></h5>
+        <h3>Valor: <span class="valor" data-valor="1500.00">R$1500.00</span></h3>
+        <button onclick="marcarPago(this)" data-pago="nao">Não Pago</button>
+        <button class="adicionar">Adicionar</button>
+      </div>
+      <div class="item nao-pago" id="item4">
+        <img src="https://www.beiramarshopping.com.br/fmanager/beiramar2017/noticias/t/imagem2378_3.jpg" align="right" width="175" height="150">
         <h1><span class="nome">Teste</span></h1>
         <h5><span class="email">Email: emailteste@gmail.com</span></h5>
         <h5><span class="numero">Whatsapp: 2041-5120</span></h5>
         <h5><span class="vence1">Aluguel vence: <strong><span class="vence2">23/02</span></strong></span></h5>
-        <h3>Valor: <span class="valor">R$1300.00</span></h3>
-        <button onclick="marcarPago(this)">Não Pago</button>
+        <h3>Valor: <span class="valor" data-valor="1500.00">R$1500.00</span></h3>
+        <button onclick="marcarPago(this)" data-pago="nao">Não Pago</button>
+        <button class="adicionar">Adicionar</button>
       </div>
-      <div class="item nao-pago" id="item1">
+      <div class="item nao-pago" id="item5">
+        <img src="https://www.beiramarshopping.com.br/fmanager/beiramar2017/noticias/t/imagem2378_3.jpg" align="right" width="175" height="150">
         <h1><span class="nome">Teste</span></h1>
         <h5><span class="email">Email: emailteste@gmail.com</span></h5>
         <h5><span class="numero">Whatsapp: 2041-5120</span></h5>
         <h5><span class="vence1">Aluguel vence: <strong><span class="vence2">23/02</span></strong></span></h5>
-        <h3>Valor: <span class="valor">R$1300.00</span></h3>
-        <button onclick="marcarPago(this)">Não Pago</button>
+        <h3>Valor: <span class="valor" data-valor="1500.00">R$1500.00</span></h3>
+        <button onclick="marcarPago(this)" data-pago="nao">Não Pago</button>
+        <button class="adicionar">Adicionar</button>
       </div>
-      <div class="item nao-pago" id="item1">
+      <div class="item nao-pago" id="item6">
+        <img src="https://www.beiramarshopping.com.br/fmanager/beiramar2017/noticias/t/imagem2378_3.jpg" align="right" width="175" height="150">
         <h1><span class="nome">Teste</span></h1>
         <h5><span class="email">Email: emailteste@gmail.com</span></h5>
         <h5><span class="numero">Whatsapp: 2041-5120</span></h5>
         <h5><span class="vence1">Aluguel vence: <strong><span class="vence2">23/02</span></strong></span></h5>
-        <h3>Valor: <span class="valor">R$1300.00</span></h3>
-        <button onclick="marcarPago(this)">Não Pago</button>
+        <h3>Valor: <span class="valor" data-valor="1500.00">R$1500.00</span></h3>
+        <button onclick="marcarPago(this)" data-pago="nao">Não Pago</button>
+        <button class="adicionar">Adicionar</button>
       </div>
-      <div class="item nao-pago" id="item1">
+      <div class="item nao-pago" id="item7">
+        <img src="https://www.beiramarshopping.com.br/fmanager/beiramar2017/noticias/t/imagem2378_3.jpg" align="right" width="175" height="150">
         <h1><span class="nome">Teste</span></h1>
         <h5><span class="email">Email: emailteste@gmail.com</span></h5>
         <h5><span class="numero">Whatsapp: 2041-5120</span></h5>
         <h5><span class="vence1">Aluguel vence: <strong><span class="vence2">23/02</span></strong></span></h5>
-        <h3>Valor: <span class="valor">R$1300.00</span></h3>
-        <button onclick="marcarPago(this)">Não Pago</button>
+        <h3>Valor: <span class="valor" data-valor="1500.00">R$1500.00</span></h3>
+        <button onclick="marcarPago(this)" data-pago="nao">Não Pago</button>
+        <button class="adicionar">Adicionar</button>
       </div>
-      <div class="item nao-pago" id="item1">
+      <div class="item nao-pago" id="item8">
+        <img src="https://www.beiramarshopping.com.br/fmanager/beiramar2017/noticias/t/imagem2378_3.jpg" align="right" width="175" height="150">
         <h1><span class="nome">Teste</span></h1>
         <h5><span class="email">Email: emailteste@gmail.com</span></h5>
         <h5><span class="numero">Whatsapp: 2041-5120</span></h5>
         <h5><span class="vence1">Aluguel vence: <strong><span class="vence2">23/02</span></strong></span></h5>
-        <h3>Valor: <span class="valor">R$1300.00</span></h3>
-        <button onclick="marcarPago(this)">Não Pago</button>
+        <h3>Valor: <span class="valor" data-valor="1500.00">R$1500.00</span></h3>
+        <button onclick="marcarPago(this)" data-pago="nao">Não Pago</button>
+        <button class="adicionar">Adicionar</button>
       </div>
-      <div class="item nao-pago" id="item1">
+      <div class="item nao-pago" id="item9">
+        <img src="https://www.beiramarshopping.com.br/fmanager/beiramar2017/noticias/t/imagem2378_3.jpg" align="right" width="175" height="150">
         <h1><span class="nome">Teste</span></h1>
         <h5><span class="email">Email: emailteste@gmail.com</span></h5>
         <h5><span class="numero">Whatsapp: 2041-5120</span></h5>
         <h5><span class="vence1">Aluguel vence: <strong><span class="vence2">23/02</span></strong></span></h5>
-        <h3>Valor: <span class="valor">R$1300.00</span></h3>
-        <button onclick="marcarPago(this)">Não Pago</button>
+        <h3>Valor: <span class="valor" data-valor="1500.00">R$1500.00</span></h3>
+        <button onclick="marcarPago(this)" data-pago="nao">Não Pago</button>
+        <button class="adicionar">Adicionar</button>
       </div>
-      <div class="item nao-pago" id="item1">
+      <div class="item nao-pago" id="item10">
+        <img src="https://www.beiramarshopping.com.br/fmanager/beiramar2017/noticias/t/imagem2378_3.jpg" align="right" width="175" height="150">
         <h1><span class="nome">Teste</span></h1>
         <h5><span class="email">Email: emailteste@gmail.com</span></h5>
         <h5><span class="numero">Whatsapp: 2041-5120</span></h5>
         <h5><span class="vence1">Aluguel vence: <strong><span class="vence2">23/02</span></strong></span></h5>
-        <h3>Valor: <span class="valor">R$1300.00</span></h3>
-        <button onclick="marcarPago(this)">Não Pago</button>
+        <h3>Valor: <span class="valor" data-valor="1500.00">R$1500.00</span></h3>
+        <button onclick="marcarPago(this)" data-id="1">Não Pago</button>
+        <button class="adicionar">Adicionar</button>
       </div>
-      <div class="item nao-pago" id="item1">
+      <div class="item nao-pago" id="item11">
+        <img src="https://www.beiramarshopping.com.br/fmanager/beiramar2017/noticias/t/imagem2378_3.jpg" align="right" width="175" height="150">
         <h1><span class="nome">Teste</span></h1>
         <h5><span class="email">Email: emailteste@gmail.com</span></h5>
         <h5><span class="numero">Whatsapp: 2041-5120</span></h5>
         <h5><span class="vence1">Aluguel vence: <strong><span class="vence2">23/02</span></strong></span></h5>
-        <h3>Valor: <span class="valor">R$1300.00</span></h3>
-        <button onclick="marcarPago(this)">Não Pago</button>
+        <h3>Valor: <span class="valor" data-valor="1500.00">R$1500.00</span></h3>
+        <button onclick="marcarPago(this)" data-id="1">Não Pago</button>
+        <button class="adicionar">Adicionar</button>
       </div>
-      <div class="item nao-pago" id="item1">
+      <div class="item nao-pago" id="item12">
+        <img src="https://www.beiramarshopping.com.br/fmanager/beiramar2017/noticias/t/imagem2378_3.jpg" align="right" width="175" height="150">
         <h1><span class="nome">Teste</span></h1>
         <h5><span class="email">Email: emailteste@gmail.com</span></h5>
         <h5><span class="numero">Whatsapp: 2041-5120</span></h5>
         <h5><span class="vence1">Aluguel vence: <strong><span class="vence2">23/02</span></strong></span></h5>
-        <h3>Valor: <span class="valor">R$1300.00</span></h3>
-        <button onclick="marcarPago(this)">Não Pago</button>
+        <h3>Valor: <span class="valor" data-valor="1500.00">R$1500.00</span></h3>
+        <button onclick="marcarPago(this)" data-id="1">Não Pago</button>
+        <button class="adicionar">Adicionar</button>
       </div>
-      <div class="item nao-pago" id="item1">
+      <div class="item nao-pago" id="item13">
+        <img src="https://www.beiramarshopping.com.br/fmanager/beiramar2017/noticias/t/imagem2378_3.jpg" align="right" width="175" height="150">
         <h1><span class="nome">Teste</span></h1>
         <h5><span class="email">Email: emailteste@gmail.com</span></h5>
         <h5><span class="numero">Whatsapp: 2041-5120</span></h5>
         <h5><span class="vence1">Aluguel vence: <strong><span class="vence2">23/02</span></strong></span></h5>
-        <h3>Valor: <span class="valor">R$1300.00</span></h3>
-        <button onclick="marcarPago(this)">Não Pago</button>
+        <h3>Valor: <span class="valor" data-valor="1500.00">R$1500.00</span></h3>
+        <button onclick="marcarPago(this)" data-id="1">Não Pago</button>
+        <button class="adicionar">Adicionar</button>
       </div>
+      <div class="item nao-pago" id="item14">
+        <img src="https://www.beiramarshopping.com.br/fmanager/beiramar2017/noticias/t/imagem2378_3.jpg" align="right" width="175" height="150">
+        <h1><span class="nome">Teste</span></h1>
+        <h5><span class="email">Email: emailteste@gmail.com</span></h5>
+        <h5><span class="numero">Whatsapp: 2041-5120</span></h5>
+        <h5><span class="vence1">Aluguel vence: <strong><span class="vence2">23/02</span></strong></span></h5>
+        <h3>Valor: <span class="valor" data-valor="1500.00">R$1500.00</span></h3>
+        <button onclick="marcarPago(this)" data-id="1">Não Pago</button>
+        <button class="adicionar">Adicionar</button>
+      </div>
+      <div class="item nao-pago" id="item15">
+        <img src="https://www.beiramarshopping.com.br/fmanager/beiramar2017/noticias/t/imagem2378_3.jpg" align="right" width="175" height="150">
+        <h1><span class="nome">Teste</span></h1>
+        <h5><span class="email">Email: emailteste@gmail.com</span></h5>
+        <h5><span class="numero">Whatsapp: 2041-5120</span></h5>
+        <h5><span class="vence1">Aluguel vence: <strong><span class="vence2">23/02</span></strong></span></h5>
+        <h3>Valor: <span class="valor" data-valor="1500.00">R$1500.00</span></h3>
+        <button onclick="marcarPago(this)" data-id="1">Não Pago</button>
+        <button class="adicionar">Adicionar</button>
+      </div>
+      <div class="item nao-pago" id="item16">
+        <img src="https://www.beiramarshopping.com.br/fmanager/beiramar2017/noticias/t/imagem2378_3.jpg" align="right" width="175" height="150">
+        <h1><span class="nome">Teste</span></h1>
+        <h5><span class="email">Email: emailteste@gmail.com</span></h5>
+        <h5><span class="numero">Whatsapp: 2041-5120</span></h5>
+        <h5><span class="vence1">Aluguel vence: <strong><span class="vence2">23/02</span></strong></span></h5>
+        <h3>Valor: <span class="valor" data-valor="1500.00">R$1500.00</span></h3>
+        <button onclick="marcarPago(this)" data-id="1">Não Pago</button>
+        <button class="adicionar">Adicionar</button>
+      </div>
+      <div class="item nao-pago" id="item17">
+        <img src="https://www.beiramarshopping.com.br/fmanager/beiramar2017/noticias/t/imagem2378_3.jpg" align="right" width="175" height="150">
+        <h1><span class="nome">Teste</span></h1>
+        <h5><span class="email">Email: emailteste@gmail.com</span></h5>
+        <h5><span class="numero">Whatsapp: 2041-5120</span></h5>
+        <h5><span class="vence1">Aluguel vence: <strong><span class="vence2">23/02</span></strong></span></h5>
+        <h3>Valor: <span class="valor" data-valor="1500.00">R$1500.00</span></h3>
+        <button onclick="marcarPago(this)" data-id="1">Não Pago</button>
+        <button class="adicionar">Adicionar</button>
+      </div>
+      <div class="item nao-pago" id="item18">
+        <img src="https://www.beiramarshopping.com.br/fmanager/beiramar2017/noticias/t/imagem2378_3.jpg" align="right" width="175" height="150">
+        <h1><span class="nome">Teste</span></h1>
+        <h5><span class="email">Email: emailteste@gmail.com</span></h5>
+        <h5><span class="numero">Whatsapp: 2041-5120</span></h5>
+        <h5><span class="vence1">Aluguel vence: <strong><span class="vence2">23/02</span></strong></span></h5>
+        <h3>Valor: <span class="valor" data-valor="1500.00">R$1500.00</span></h3>
+        <button onclick="marcarPago(this)" data-id="1">Não Pago</button>
+        <button class="adicionar">Adicionar</button>
+      </div>
+      <div class="item nao-pago" id="item19">
+        <img src="https://www.beiramarshopping.com.br/fmanager/beiramar2017/noticias/t/imagem2378_3.jpg" align="right" width="175" height="150">
+        <h1><span class="nome">Teste</span></h1>
+        <h5><span class="email">Email: emailteste@gmail.com</span></h5>
+        <h5><span class="numero">Whatsapp: 2041-5120</span></h5>
+        <h5><span class="vence1">Aluguel vence: <strong><span class="vence2">23/02</span></strong></span></h5>
+        <h3>Valor: <span class="valor" data-valor="1500.00">R$1500.00</span></h3>
+        <button onclick="marcarPago(this)" data-id="1">Não Pago</button>
+        <button class="adicionar">Adicionar</button>
+      </div>
+      <div class="item nao-pago" id="item20">
+        <img src="https://www.beiramarshopping.com.br/fmanager/beiramar2017/noticias/t/imagem2378_3.jpg" align="right" width="175" height="150">
+        <h1><span class="nome">Teste</span></h1>
+        <h5><span class="email">Email: emailteste@gmail.com</span></h5>
+        <h5><span class="numero">Whatsapp: 2041-5120</span></h5>
+        <h5><span class="vence1">Aluguel vence: <strong><span class="vence2">23/02</span></strong></span></h5>
+        <h3>Valor: <span class="valor" data-valor="1500.00">R$1500.00</span></h3>
+        <button onclick="marcarPago(this)" data-id="1">Não Pago</button>
+        <button class="adicionar">Adicionar</button>
+      </div>
+      <div class="item nao-pago" id="item21">
+        <img src="https://www.beiramarshopping.com.br/fmanager/beiramar2017/noticias/t/imagem2378_3.jpg" align="right" width="175" height="150">
+        <h1><span class="nome">Teste</span></h1>
+        <h5><span class="email">Email: emailteste@gmail.com</span></h5>
+        <h5><span class="numero">Whatsapp: 2041-5120</span></h5>
+        <h5><span class="vence1">Aluguel vence: <strong><span class="vence2">23/02</span></strong></span></h5>
+        <h3>Valor: <span class="valor" data-valor="1500.00">R$1500.00</span></h3>
+        <button onclick="marcarPago(this)" data-id="1">Não Pago</button>
+        <button class="adicionar">Adicionar</button>
+      </div>
+      <div class="item nao-pago" id="item22">
+        <img src="https://www.beiramarshopping.com.br/fmanager/beiramar2017/noticias/t/imagem2378_3.jpg" align="right" width="175" height="150">
+        <h1><span class="nome">Teste</span></h1>
+        <h5><span class="email">Email: emailteste@gmail.com</span></h5>
+        <h5><span class="numero">Whatsapp: 2041-5120</span></h5>
+        <h5><span class="vence1">Aluguel vence: <strong><span class="vence2">23/02</span></strong></span></h5>
+        <h3>Valor: <span class="valor" data-valor="1500.00">R$1500.00</span></h3>
+        <button onclick="marcarPago(this)" data-id="1">Não Pago</button>
+        <button class="adicionar">Adicionar</button>
+      </div>
+      <div class="item nao-pago" id="item23">
+        <img src="https://www.beiramarshopping.com.br/fmanager/beiramar2017/noticias/t/imagem2378_3.jpg" align="right" width="175" height="150">
+        <h1><span class="nome">Teste</span></h1>
+        <h5><span class="email">Email: emailteste@gmail.com</span></h5>
+        <h5><span class="numero">Whatsapp: 2041-5120</span></h5>
+        <h5><span class="vence1">Aluguel vence: <strong><span class="vence2">23/02</span></strong></span></h5>
+        <h3>Valor: <span class="valor" data-valor="1500.00">R$1500.00</span></h3>
+        <button onclick="marcarPago(this)" data-id="1">Não Pago</button>
+        <button class="adicionar">Adicionar</button>
+      </div>
+      <div class="item nao-pago" id="item24">
+        <img src="https://www.beiramarshopping.com.br/fmanager/beiramar2017/noticias/t/imagem2378_3.jpg" align="right" width="175" height="150">
+        <h1><span class="nome">Teste</span></h1>
+        <h5><span class="email">Email: emailteste@gmail.com</span></h5>
+        <h5><span class="numero">Whatsapp: 2041-5120</span></h5>
+        <h5><span class="vence1">Aluguel vence: <strong><span class="vence2">23/02</span></strong></span></h5>
+        <h3>Valor: <span class="valor" data-valor="1500.00">R$1500.00</span></h3>
+        <button onclick="marcarPago(this)" data-id="1">Não Pago</button>
+        <button class="adicionar">Adicionar</button>
+      </div>
+      <div class="item nao-pago" id="item25">
+        <img src="https://www.beiramarshopping.com.br/fmanager/beiramar2017/noticias/t/imagem2378_3.jpg" align="right" width="175" height="150">
+        <h1><span class="nome">Teste</span></h1>
+        <h5><span class="email">Email: emailteste@gmail.com</span></h5>
+        <h5><span class="numero">Whatsapp: 2041-5120</span></h5>
+        <h5><span class="vence1">Aluguel vence: <strong><span class="vence2">23/02</span></strong></span></h5>
+        <h3>Valor: <span class="valor" data-valor="1500.00">R$1500.00</span></h3>
+        <button onclick="marcarPago(this)" class= "data-id=1">Não Pago</button>
+        <button class="adicionar">Adicionar</button>
+
+      </div>
+
     </div>
-    <p>Encontrou algum problema? Me contate!</p>
     <script>
       function marcarPago(botao) {
         var item = botao.parentElement;
@@ -182,6 +361,78 @@
           botao.innerHTML = "Não Pago";
         }
       }
+    </script>
+    <script>
+      function marcarPago(botao) {
+  // Alterna entre "pago" e "nao-pago"
+  botao.parentNode.classList.toggle("pago");
+  botao.parentNode.classList.toggle("nao-pago");
+  
+  // Atualiza o valor do botão e do atributo "data-pago"
+  if (botao.getAttribute("data-pago") === "nao") {
+    botao.innerText = "Pago";
+    botao.setAttribute("data-pago", "sim");
+    localStorage.setItem("botao-" + botao.parentNode.id, "sim");
+  } else {
+    botao.innerText = "Não Pago";
+    botao.setAttribute("data-pago", "nao");
+    localStorage.setItem("botao-" + botao.parentNode.id, "nao");
+  }
+}
+
+// Verifica se o botão foi clicado e atualiza o estado do botão
+document.querySelectorAll('.item').forEach(function(item) {
+  var botao = item.querySelector('button');
+  var valor = localStorage.getItem("botao-" + item.id);
+  if (valor) {
+    botao.setAttribute("data-pago", valor);
+    if (valor === "sim") {
+      botao.innerText = "Pago";
+      item.classList.add("pago");
+    } else {
+      botao.innerText = "Não Pago";
+      item.classList.add("nao-pago");
+    }
+  }
+});
+  </script>
+  
+    </script>
+    <script>document.querySelectorAll('.btn-pago').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var id = this.getAttribute('data-id');
+        localStorage.setItem('pago-' + id, 'true');
+        this.classList.add('pago');
+      });
+    });
+    </script>
+    <script>
+      document.querySelectorAll('.btn-pago').forEach(function(btn) {
+  var id = btn.getAttribute('data-id');
+  if (localStorage.getItem('pago-' + id) === 'true') {
+    btn.classList.add('pago');
+  }
+});
+    </script>
+    <script>
+      // Seleciona todos os botões com a classe "adicionar"
+      const botoes = document.querySelectorAll('.adicionar');
+      
+      let total = 0;
+      
+      // Itera sobre os botões e adiciona um ouvinte de eventos para cada um
+      botoes.forEach(botao => {
+        botao.addEventListener('click', () => {
+          // Encontra o elemento "valor" correspondente ao botão e adiciona seu valor à variável "total"
+          const valor = botao.parentNode.querySelector('.valor');
+          const valorNumerico = parseFloat(valor.dataset.valor);
+          total += valorNumerico;
+          
+          // Atualiza o resultado na tela
+          const resultado = document.getElementById('resultado');
+          resultado.textContent = `Total até agora: R$${total.toFixed(2)}`;
+        });
+      });
     </script>
   </body>
 </html>
