@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <style>
+      body {
+        background-color: #0a0d1a;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        margin: 0;
+        padding: 0;
+      }
+      form {
+        background-color: #160f26;
+        border-radius: 10px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+        margin: 5% auto;
+        max-width: 400px;
+        padding: 40px;
+        text-align: center;
+      }
+      .numero{
+        color:rgb(143, 143, 192);
+      }
+      .email{
+        color: rgb(143, 143, 192);
+      }
+      h1 {
+        font-size: 28px;
+        margin-bottom: 30px;
+      }
+      input[type="text"],
+      input[type="password"] {
+        background-color: #383838;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 16px;
+        margin: 10px 0;
+        padding: 10px;
+        width: 90%;
+      }
+      input[type="submit"] {
+        background-color: #000000;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 20px;
+        padding: 10px;
+        width: 100%;
+      }
+      input[type="submit"]:hover {
+        background-color: #393a39;
+      }
+      footer {
+        background-color: #160f26;
+        border-radius: 10px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+        color: #fff;
+        font-size: 14px;
+        margin: 20px auto;
+        max-width: 400px;
+        padding: 10px;
+        text-align: center;
+      }
+      footer img {
+        height: 50px;
+        width: auto;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <form onsubmit="return checkPassword()">
+      <h1>Olá, Seja Bem Vindo!</h1>
+      <p>Para continuar, realize seu login.</p>
+      <input type="text" placeholder="Nome de usuário">
+      <input type="password" id="password" placeholder="Senha">
+      <input type="submit" value="Entrar">
+    </form>
+    <footer>
+      <h4>Contato: <span class= "email">pedroafiamoncini1@gmail.com</h4></class>
+      <h4> Dúvidas entre em contato: <span class = "numero">(47) 99997-5934</h4></class>
+    </footer>
+    <script>
+      function checkPassword() {
+        var password = document.getElementById("password").value;
+        if (password == "pedro") {
+          window.location.href = "feito_por_pedro.html";
+          return false;
+        } else {
+          alert("Senha incorreta. Tente novamente.");
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>
