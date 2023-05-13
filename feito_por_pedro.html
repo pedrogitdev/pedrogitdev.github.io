@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Lista de Pagamentos</title>
+    <style>
+      body {
+        background-color: #160f26;
+        font-family: Helvetica, sans-serif;
+        font-size: 16px;
+        margin: 0;
+        padding: 0;
+      }
+      #container {
+        margin: 5% auto;
+        max-width: 1000px;
+        text-align: center;
+      }
+      p {
+        text-align: center;
+        color: white;
+        font-size:25px
+      }
+      footer {
+        color: white;
+        text-align: center;
+        font-size: 25px;
+      }
+      h1 {
+        color: white;
+        font-size: 28px;
+        margin-bottom: 30px;
+      }
+      h2{
+        color: white;
+      }
+      .vence2{
+        color: red;
+        font-size: 18px;
+      }
+      .valor {
+        color: rgb(9, 255, 37);
+      }
+      button {
+        background-color: #000000;
+        border: none;
+        border-radius: 5px;
+        color: #ffffff;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+        padding: 10px;
+      }
+      button:hover {
+        background-color: #406c2d;
+      }
+      .pago {
+        background-color: #28a745;
+        color: #fff;
+      }
+      .nao-pago {
+        background-color: #645e5e;
+        color: #fff;
+      }
+      .item {
+        border: 2px solid #e3e3e3;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        padding: 10px;
+        text-align: left;
+        display: inline-block;
+        width: 200px;
+        vertical-align: top;
+        margin-right: 5px;
+      }
+      .pago .nome {
+        text-decoration: line-through;
+      }
+      .pago button::after {
+        content: "✅";
+        margin-left: 5px;
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1><strong>Oi, Pai!</strong></h1>
+      <h2>Esta é a lista de inquilinos, para marcar como pago clique no botão preto.</h2>
+      <div class="item nao-pago" id="item1">
+        <h1><span class="nome">Teste</span></h1>
+        <h5><span class="email">Email: emailteste@gmail.com</span></h5>
+        <h5><span class="numero">Whatsapp: 2041-5120</span></h5>
+        <h5><span class="vence1">Aluguel vence: <strong><span class="vence2">23/02</span></strong></span></h5>
+        <h3>Valor: <span class="valor">R$1300.00</span></h3>
+        <button onclick="marcarPago(this)">Não Pago</button>
+      </div>
+      <div class="item nao-pago" id="item1">
+        <h1><span class="nome">Teste</span></h1>
+        <h5><span class="email">Email: emailteste@gmail.com</span></h5>
+        <h5><span class="numero">Whatsapp: 2041-5120</span></h5>
+        <h5><span class="vence1">Aluguel vence: <strong><span class="vence2">23/02</span></strong></span></h5>
+        <h3>Valor: <span class="valor">R$1300.00</span></h3>
+        <button onclick="marcarPago(this)">Não Pago</button>
+      </div>
+      <div class="item nao-pago" id="item1">
+        <h1><span class="nome">Teste</span></h1>
+        <h5><span class="email">Email: emailteste@gmail.com</span></h5>
+        <h5><span class="numero">Whatsapp: 2041-5120</span></h5>
+        <h5><span class="vence1">Aluguel vence: <strong><span class="vence2">23/02</span></strong></span></h5>
+        <h3>Valor: <span class="valor">R$1300.00</span></h3>
+        <button onclick="marcarPago(this)">Não Pago</button>
+      </div>
+      <div class="item nao-pago" id="item1">
+        <h1><span class="nome">Teste</span></h1>
+        <h5><span class="email">Email: emailteste@gmail.com</span></h5>
+        <h5><span class="numero">Whatsapp: 2041-5120</span></h5>
+        <h5><span class="vence1">Aluguel vence: <strong><span class="vence2">23/02</span></strong></span></h5>
+        <h3>Valor: <span class="valor">R$1300.00</span></h3>
+        <button onclick="marcarPago(this)">Não Pago</button>
+      </div>
+      <div class="item nao-pago" id="item1">
+        <h1><span class="nome">Teste</span></h1>
+        <h5><span class="email">Email: emailteste@gmail.com</span></h5>
+        <h5><span class="numero">Whatsapp: 2041-5120</span></h5>
+        <h5><span class="vence1">Aluguel vence: <strong><span class="vence2">23/02</span></strong></span></h5>
+        <h3>Valor: <span class="valor">R$1300.00</span></h3>
+        <button onclick="marcarPago(this)">Não Pago</button>
+      </div>
+      <div class="item nao-pago" id="item1">
+        <h1><span class="nome">Teste</span></h1>
+        <h5><span class="email">Email: emailteste@gmail.com</span></h5>
+        <h5><span class="numero">Whatsapp: 2041-5120</span></h5>
+        <h5><span class="vence1">Aluguel vence: <strong><span class="vence2">23/02</span></strong></span></h5>
+        <h3>Valor: <span class="valor">R$1300.00</span></h3>
+        <button onclick="marcarPago(this)">Não Pago</button>
+      </div>
+      <div class="item nao-pago" id="item1">
+        <h1><span class="nome">Teste</span></h1>
+        <h5><span class="email">Email: emailteste@gmail.com</span></h5>
+        <h5><span class="numero">Whatsapp: 2041-5120</span></h5>
+        <h5><span class="vence1">Aluguel vence: <strong><span class="vence2">23/02</span></strong></span></h5>
+        <h3>Valor: <span class="valor">R$1300.00</span></h3>
+        <button onclick="marcarPago(this)">Não Pago</button>
+      </div>
+      <div class="item nao-pago" id="item1">
+        <h1><span class="nome">Teste</span></h1>
+        <h5><span class="email">Email: emailteste@gmail.com</span></h5>
+        <h5><span class="numero">Whatsapp: 2041-5120</span></h5>
+        <h5><span class="vence1">Aluguel vence: <strong><span class="vence2">23/02</span></strong></span></h5>
+        <h3>Valor: <span class="valor">R$1300.00</span></h3>
+        <button onclick="marcarPago(this)">Não Pago</button>
+      </div>
+      <div class="item nao-pago" id="item1">
+        <h1><span class="nome">Teste</span></h1>
+        <h5><span class="email">Email: emailteste@gmail.com</span></h5>
+        <h5><span class="numero">Whatsapp: 2041-5120</span></h5>
+        <h5><span class="vence1">Aluguel vence: <strong><span class="vence2">23/02</span></strong></span></h5>
+        <h3>Valor: <span class="valor">R$1300.00</span></h3>
+        <button onclick="marcarPago(this)">Não Pago</button>
+      </div>
+      <div class="item nao-pago" id="item1">
+        <h1><span class="nome">Teste</span></h1>
+        <h5><span class="email">Email: emailteste@gmail.com</span></h5>
+        <h5><span class="numero">Whatsapp: 2041-5120</span></h5>
+        <h5><span class="vence1">Aluguel vence: <strong><span class="vence2">23/02</span></strong></span></h5>
+        <h3>Valor: <span class="valor">R$1300.00</span></h3>
+        <button onclick="marcarPago(this)">Não Pago</button>
+      </div>
+    </div>
+    <p>Encontrou algum problema? Me contate!</p>
+    <script>
+      function marcarPago(botao) {
+        var item = botao.parentElement;
+        if (item.classList.contains("nao-pago")) {
+          item.classList.remove("nao-pago");
+          item.classList.add("pago");
+          botao.innerHTML = "Pago";
+        } else {
+          item.classList.remove("pago");
+          item.classList.add("nao-pago");
+          botao.innerHTML = "Não Pago";
+        }
+      }
+    </script>
+  </body>
+</html>
