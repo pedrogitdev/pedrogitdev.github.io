@@ -2,6 +2,9 @@
 <html>
   <head>
     <title>Login</title>
+    <script>
+      document.addEventListener('contextmenu', event => event.preventDefault());
+    </script>
     <style>
       body {
         background-color: #0a0d1a;
@@ -86,16 +89,16 @@
       <h4> Dúvidas entre em contato: <span class = "numero">(47) 99997-5934</h4></class>
     </footer>
     <script>
-      function checkPassword() {
-        var password = document.getElementById("password").value;
-        if (password == "pedro") {
-          window.location.href = "feito_por_pedro.html";
-          return false;
-        } else {
-          alert("Senha incorreta. Tente novamente.");
-          return false;
-        }
-      }
+function checkPassword() {
+  var password = document.getElementById("password").value;
+  if (password == "pedro") {
+    window.location.href = "feito_por_pedro.html";
+    return false;
+  } else {
+    alert("Senha incorreta. Tente novamente.");
+    return false;
+  }
+}
     </script>
   </body>
 </html>
